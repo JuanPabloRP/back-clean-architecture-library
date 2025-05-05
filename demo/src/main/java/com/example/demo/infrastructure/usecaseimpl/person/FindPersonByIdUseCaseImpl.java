@@ -5,8 +5,10 @@ import com.example.demo.domain.repository.PersonRepository;
 import com.example.demo.domain.usecase.person.FindPersonByIdUseCase;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
+import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
+@Service
 @RequiredArgsConstructor
 public class FindPersonByIdUseCaseImpl implements FindPersonByIdUseCase {
 

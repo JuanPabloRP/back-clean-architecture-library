@@ -8,9 +8,11 @@ import com.example.demo.domain.repository.MovementRepository;
 import com.example.demo.domain.usecase.movement.BorrowMaterialUseCase;
 import com.example.demo.infrastructure.helpers.MovementType;
 import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 
+@Service
 @RequiredArgsConstructor
 public class BorrowMaterialUseCaseImpl implements BorrowMaterialUseCase {
 

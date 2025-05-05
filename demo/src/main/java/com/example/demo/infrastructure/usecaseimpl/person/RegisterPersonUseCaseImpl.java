@@ -4,7 +4,9 @@ import com.example.demo.domain.model.Person;
 import com.example.demo.domain.repository.PersonRepository;
 import com.example.demo.domain.usecase.person.RegisterPersonUseCase;
 import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
 
+@Service
 @RequiredArgsConstructor
 public class RegisterPersonUseCaseImpl implements RegisterPersonUseCase {
 

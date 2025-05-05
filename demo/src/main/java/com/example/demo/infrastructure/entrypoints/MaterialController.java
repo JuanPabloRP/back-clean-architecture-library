@@ -19,22 +19,21 @@ public class MaterialController {
 
     private final RegisterMaterialUseCase registerMaterialUseCase;
     private final GetAllMaterialsUseCase getAllMaterialsUseCase;
-    private final FindMaterialFindByIdUseCase findMaterialFindByIdUseCase;
     private final IncrementMaterialQuantityUseCase incrementMaterialQuantityUseCase;
 
 
     @GetMapping
     public List<Material> getAllMaterials() {
-        return getAllMaterialsUseCase.getAllMaterials();
+        return getAllMaterialsUseCase.execute();
     }
 
     @PostMapping
     public Material registerMaterial(@RequestBody Material material) {
-        return registerMaterialUseCase.registerMaterial(material);
+        return registerMaterialUseCase.execute(material);
     }
 
     @PostMapping("/{id}/increment")
     public boolean incrementMaterial(@PathVariable String id, @RequestParam int amount) {
-        return incrementMaterialQuantityUseCase.incrementMaterialQuantity(id, amount);
+        return incrementMaterialQuantityUseCase.execute(id, amount);
     }
 }

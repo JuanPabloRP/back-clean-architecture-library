@@ -4,9 +4,11 @@ import com.example.demo.domain.model.Person;
 import com.example.demo.domain.repository.PersonRepository;
 import com.example.demo.domain.usecase.person.DeletePersonUseCase;
 import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
 
 import java.util.Objects;
 
+@Service
 @RequiredArgsConstructor
 public class DeletePersonUseCaseImpl implements DeletePersonUseCase {
 

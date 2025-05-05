@@ -4,9 +4,11 @@ import com.example.demo.domain.model.Material;
 import com.example.demo.domain.usecase.material.IncrementMaterialQuantityUseCase;
 import com.example.demo.infrastructure.drivenadapters.adapter.MaterialRepositoryImpl;
 import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
+@Service
 @RequiredArgsConstructor
 public class IncrementMaterialQuantityUseCaseImpl implements IncrementMaterialQuantityUseCase {
     private final MaterialRepositoryImpl materialRepo;
