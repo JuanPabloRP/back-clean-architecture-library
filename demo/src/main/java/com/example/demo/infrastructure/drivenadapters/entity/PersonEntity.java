@@ -25,7 +25,8 @@ public class PersonEntity {
     private Role role;
 
     @ManyToMany
-    private List<MaterialEntity> borrowedMaterials;
+    @Builder.Default
+    private List<MaterialEntity> borrowedMaterials = List.of();
 
     public Person toPerson() {
         return Person.builder()
@@ -36,6 +37,7 @@ public class PersonEntity {
                         borrowedMaterials.stream()
                                 .map(MaterialEntity::toMaterial)
                                 .collect(Collectors.toList()))
+
                 .build();
     }
 
@@ -45,9 +47,12 @@ public class PersonEntity {
                 .name(person.getName())
                 .role(person.getRole())
                 .borrowedMaterials(
-                        person.getBorrowedMaterials().stream()
-                                .map(MaterialEntity::fromMaterial)
-                                .collect(Collectors.toList()))
+                person.getBorrowedMaterials() != null
+                        ? person.getBorrowedMaterials().stream()
+                        .map(MaterialEntity::fromMaterial)
+                        .collect(Collectors.toList())
+                        : List.of()
+        )
                 .build();
     }
 }

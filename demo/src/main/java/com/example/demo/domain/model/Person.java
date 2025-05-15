@@ -1,11 +1,9 @@
 package com.example.demo.domain.model;
 
 import com.example.demo.infrastructure.helpers.Role;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Getter
@@ -16,5 +14,8 @@ public class Person {
     private String idCard;
     private String name;
     private Role role;
-    private List<Material> borrowedMaterials;
+
+    @Builder.Default
+    private List<Material> borrowedMaterials = List.of();
+
 }

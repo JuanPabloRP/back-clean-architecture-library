@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.*;
 @RequiredArgsConstructor
 public class PersonController {
 
-    RegisterPersonUseCase registerPersonUseCase;
-    DeletePersonUseCase deletePersonUseCase;
+    private final RegisterPersonUseCase registerPersonUseCase;
+    private final DeletePersonUseCase deletePersonUseCase;
 
     @PostMapping
     public Person registerPerson(@RequestBody Person person) {

@@ -1,8 +1,7 @@
 package com.example.demo.infrastructure.drivenadapters.entity;
 
 import com.example.demo.domain.model.Material;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDate;
@@ -16,11 +15,18 @@ import java.time.LocalDate;
 public class MaterialEntity {
 
     @Id
-    private String id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private String title;
     private LocalDate registrationDate;
     private int totalQuantity;
     private int availableQuantity;
+
+
+    @PrePersist
+    protected void onCreate() {
+        this.registrationDate = LocalDate.now();
+    }
 
     public Material toMaterial() {
         return Material.builder()

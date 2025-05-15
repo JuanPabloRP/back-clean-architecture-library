@@ -20,15 +20,15 @@ import java.util.List;
 @RequiredArgsConstructor
 public class MovementController {
 
-    FindPersonByIdUseCase findPersonByIdUseCase;
-    RegisterPersonUseCase registerPersonUseCase;
+    private final FindPersonByIdUseCase findPersonByIdUseCase;
+    private final RegisterPersonUseCase registerPersonUseCase;
 
-    FindMaterialFindByIdUseCase findMaterialFindByIdUseCase;
-    RegisterMaterialUseCase registerMaterialUseCase;
+    private final FindMaterialFindByIdUseCase findMaterialFindByIdUseCase;
+    private final RegisterMaterialUseCase registerMaterialUseCase;
 
-    BorrowMaterialUseCase borrowMaterialUseCase;
-    ReturnMaterialUseCase returnMaterialUseCase;
-    GetLibraryHistoryUseCase getLibraryHistoryUseCase;
+    private final BorrowMaterialUseCase borrowMaterialUseCase;
+    private final ReturnMaterialUseCase returnMaterialUseCase;
+    private final GetLibraryHistoryUseCase getLibraryHistoryUseCase;
 
 
     @PostMapping("/borrow")

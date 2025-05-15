@@ -12,7 +12,7 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @Builder(toBuilder = true)
 public class Material {
-    private String id;
+    private Long id;
     private String title;
     private LocalDate registrationDate;
     private int totalQuantity;
