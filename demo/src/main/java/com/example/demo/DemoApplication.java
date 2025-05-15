@@ -9,7 +9,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 		"com.example.demo.infrastructure",
 		"com.example.demo.domain"
 })
-//@SpringBootApplication
 public class DemoApplication {
 
 	public static void main(String[] args) {
